@@ -1,0 +1,27 @@
+
+aside {
+    display: grid;
+    grid-template-columns: auto 40px;
+    padding: 2em;
+}
+img {
+    width: 40px;
+    cursor: pointer;
+}
+
+.navigation {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+.active {
+    position: absolute;
+    display: block;
+    background: black;
+    width: 50%;
+    left: 0;
+    top: 0;
+    height: 100%;
+    -webkit-transition: fill 4s; 
+    transition: fill 4s; 
+}
