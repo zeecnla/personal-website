@@ -1,19 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 :root {
   --ghost: #C2C8D4;
   --dianne: #1D4455;
 }
-html {
-  font-family: sans-serif;
+body, html {
+  height: calc(100% - 2em);
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+  color:black;
+  background: var(--ghost);
+  color: var(--dianne);
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
-body {
-  margin: 0;
-  background: var(--ghost);
-  color: var(--dianne) !important;
-} 
+ul {
+  list-style-type: none;
+}
 
-@media only screen and (max-width: 480px) {
+@media (min-width: 600px) {
   html {
     font-size: 100%;
   }

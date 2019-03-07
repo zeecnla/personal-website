@@ -1,0 +1,22 @@
+
+.home h2 {
+    font-size: 5em;
+    margin:0;
+    padding-top:50px;
+}
+.home p {
+    white-space: pre-wrap;
+}
+.cta {
+    display: block;
+    color: black;
+    background: white;
+    text-decoration: none;
+    padding: 8px 50px;
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 4px;
+    margin: 2em 0;
+    cursor: pointer;
+}

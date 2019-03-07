@@ -3,10 +3,20 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+import '../components/css/index.css'
+
 const IndexPage = ({data}) => (
   <Layout>
     <SEO title="Home" keywords={[`cesar`, `melchor`, `react`]} />
-    <p>Hello, my name is Cesar. </p>
+    <div className="home">
+      <h2>Hello!</h2>
+      <p>
+        My name is Cesar Melchor and 
+        I am a Software Developer based in Los Angeles
+        You can check some of my work out here
+      </p>
+      <button className="cta">my portfolio</button>
+    </div>
   </Layout>
 )
 
