@@ -3,6 +3,25 @@ import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
 import Layout from "../components/layout"
+class BlogPost extends Component {
+  render() {
+    return (
+      <Layout>
+        <div>
+          <h1>test</h1>
+          <h2>testinbfg</h2>
+        </div>
+      </Layout>
+      
+    )
+  }
+};
+
+
+
+
+
+{/*
 
 class BlogPost extends Component {
   render() {
@@ -43,4 +62,4 @@ export const pageQuery = graphql`
         }
     }
 `
-
+  */}
