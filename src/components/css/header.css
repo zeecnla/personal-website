@@ -23,6 +23,7 @@ img {
     transition: fill 4s; 
     font-weight: bold;
     text-align: center;
+    z-index: 10;
 }
 aside {
     color:black;

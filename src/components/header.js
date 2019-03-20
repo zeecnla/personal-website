@@ -4,7 +4,6 @@ import React from "react"
 import './css/header.css'
 import menu from '../images/menu.svg'
 import exit from '../images/exit.svg'
-import styled from 'styled-components'
 
 
 
