@@ -16,15 +16,15 @@ const BlogPost = ({node}) =>{
 const BlogPage = ({data}) => (
   <Layout>
     <ul>
-    {/*data.allContentfulBlog.edges.map((edge,i)=> <BlogPost node={edge.node} key={i}/>)*/}
+      {data.allContentfulBlog.edges.map((edge,i)=> <BlogPost node={edge.node} key={i}/>)}
     </ul>
   </Layout>
 )
 
 export default BlogPage
-/*
+
 export const pageQuery = graphql`
-  query pageQuery {
+  query blogQuery {
     allContentfulBlog(
       filter:{
         node_locale: {eq:"en-US"}

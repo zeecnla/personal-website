@@ -42,13 +42,27 @@ class Header extends React.Component {
         <img className="burger" src={menu} onClick = {this.handleMenu}/>
         <nav className={`${menuActive}`}> 
         <ul className="navigation">
+            <li 
+              style={{
+                top:0,
+                right:0,
+                margin: `20px 55px 20px 20px`,
+                padding:0,
+                position:`absolute`
+        
+              }}>
+              <img style={{
+                  width:`25px`
+              }}className="exit" src={exit} onClick={this.handleMenu}/>
+            </li>
             <li>
-              <Link 
-              to="/blog"
+              <a 
+              href="https://medium.com/@zeecnla"
               style={{
                 textDecoration: `none`,
+                marginTop: `50px`
               }}
-              >blog</Link>
+              >blog</a>
             </li>
             <li>
               <Link 
@@ -81,9 +95,6 @@ class Header extends React.Component {
                   textDecoration: `none`,
                 }}
               >contact</Link>
-            </li>
-            <li>
-              <img className="exit" src={exit} onClick={this.handleMenu}/>
             </li>
           </ul>
         </nav>

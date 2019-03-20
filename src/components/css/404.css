@@ -30,3 +30,19 @@
     font-size: 25px;
     line-height:60px;
   }
+
+@media only screen and (max-width:400px){
+  .page h2{
+    text-align: center;
+    padding:0;
+  }
+  .info {
+    grid-template-columns: 1fr;
+  }
+  .info p {
+    width:auto;
+  }
+  .gohome {
+    text-align: center;
+  }
+}

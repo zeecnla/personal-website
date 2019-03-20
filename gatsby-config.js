@@ -1,3 +1,5 @@
+const { spaceId, accessToken } = require('./keys');
+
 module.exports = {
   siteMetadata: {
   title: `C.`,
@@ -14,8 +16,17 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `portfolio`,
+        path: `${__dirname}/src/images/portfolio`,
+      },
+    },
+    {
       resolve: `gatsby-source-contentful`,
       options: {
+        spaceId:spaceId,
+        accessToken:accessToken
       }
     },
     `gatsby-transformer-sharp`,

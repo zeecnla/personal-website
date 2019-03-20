@@ -4,18 +4,21 @@
   --dianne: #1D4455;
 }
 body, html {
-  height: calc(100% - 2em);
   margin: 0;
   overflow-x: hidden;
   font-family: 'Montserrat', sans-serif;
   color:black;
-  background: var(--ghost);
-  color: var(--dianne);
+  background: #C0C0C0;/**var(--ghost);**/
+  color: black; /*var(--dianne);*/
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+
 ul {
   list-style-type: none;
+}
+a {
+  cursor: pointer;
 }
 
 @media (min-width: 600px) {

@@ -13,10 +13,8 @@ img {
 .active {
     position: absolute;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--ghost);   
-    background: var(--dianne);
+    color: black;/*var(--ghost);   */
+    background: white;/*var(--dianne);*/
     width: 100%;
     left: 0;
     top: 0;
@@ -27,10 +25,10 @@ img {
     text-align: center;
 }
 aside {
-    color: #fff;
+    color:black;
     display: grid;
     grid-template-columns: auto 40px;
-    padding: 2em;
+    margin-top:20px;
 }
 nav a {
     text-decoration: none;
@@ -44,7 +42,10 @@ nav ul {
 }
 nav ul li {
     padding: 0 25px;
-    display: block;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 .navigation {
     position: relative;
@@ -56,9 +57,9 @@ nav ul li {
     text-decoration: none;
     text-transform: uppercase;
     font-size: 1em;
-    display: block;
-    padding: 1.4em 3em;
-    color: white;
+    display: inline-block;
+    margin: 1em 3em;
+    color: black;
     text-align: center;
 }
 
