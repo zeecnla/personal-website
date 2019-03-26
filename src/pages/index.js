@@ -9,12 +9,9 @@ const IndexPage = ({data}) => (
   <Layout>
     <SEO title="Home" keywords={[`cesar`, `melchor`, `react`]} />
     <div className="home">
-      <h2>Hello!</h2>
-      <p>
-        My name is Cesar Melchor and 
-        I am a Software Developer based in Los Angeles
-        You can check some of my work out here
-      </p>
+      <h2 className="title">Hi my name is cesar</h2>
+      <p>I am a Software Engineer</p>
+      
       <button className="cta">my portfolio</button>
     </div>
   </Layout>

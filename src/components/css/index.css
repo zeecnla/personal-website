@@ -1,8 +1,9 @@
 
 .home h2 {
-    font-size: 5em;
+    font-size: 4em;
     margin:0;
-    padding-top:50px;
+    text-transform: uppercase;
+    line-height: 1em;
 }
 .home p {
     white-space: pre-wrap;

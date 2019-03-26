@@ -2,7 +2,7 @@ const { spaceId, accessToken } = require('./keys');
 
 module.exports = {
   siteMetadata: {
-  title: `C.`,
+  title: `cesar`,
     description: `This is my portfolio site.`,
     author: `@zeecnla`,
   },
@@ -21,6 +21,13 @@ module.exports = {
         name: `portfolio`,
         path: `${__dirname}/src/images/portfolio`,
       },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options : {
+        name: 'footer',
+        path: `${__dirname}/src/images/assets/footer`
+      }
     },
     {
       resolve: `gatsby-source-contentful`,
