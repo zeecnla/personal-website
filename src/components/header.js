@@ -18,7 +18,9 @@ class Header extends React.Component {
 
     const menuActive = this.state.isActive ? 'active ' : 'not-active';
     return (
-      <aside>
+      <aside style={{
+        background: `white`
+      }}>
         <h1 
         style={{
           margin:0

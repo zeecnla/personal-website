@@ -7,17 +7,41 @@ import twitter from '../images/assets/footer/twitter.svg'
 
 
 const Footer = ({ data }) => (
-    <footer>
-        <div class="social">
-            <p>Let's Connect!</p>
-            <ul>
-                <li>
-                    <i src={github} />
+    <footer style={{
+        padding: `20px`
+    }}>
+        <h2>Let's Work Togethor</h2>
+        <p> 
+            If you want to chat about a project you want 
+            help with or need any advice, just drop me a 
+            message. I’m AVAILABLE for any projects you 
+            want to work with.
+        </p>
+        <h3>Email Me</h3>
+        <p>Get my resume</p>
+
+
+        <div className="social">
+            <ul style={{
+                margin: 0,
+                padding: 0
+            }}>
+                <li style={{
+                    display:`inline-flex`,
+                    padding: `0 10px`
+                }}>
+                    <img src={github} />
                 </li>
-                <li>
+                <li style={{
+                    display:`inline-flex`,
+                    padding: `0 10px`
+                }}> 
                     <img src={linkedin} />
                 </li>
-                <li>
+                <li style={{
+                    display:`inline-flex`,
+                    padding: `0 10px`
+                }}> 
                     <img src={twitter} />
                 </li>
             </ul>

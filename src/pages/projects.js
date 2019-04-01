@@ -3,6 +3,11 @@ import Img from 'gatsby-image'
 
 import Layout from "../components/layout"
 
+const page = ()=>(
+    <h2>hello</h2>
+)
+export default page; 
+{/*
 const ProjectItem = ({node}) => {
 
     return(
@@ -69,4 +74,4 @@ query projectQuery {
     }
   }
   
-`
+`*/}

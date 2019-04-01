@@ -1,13 +1,44 @@
 
 .home h2 {
-    font-size: 4em;
+    padding-top:10vh;
+    font-size: 24px;
     margin:0;
-    text-transform: uppercase;
     line-height: 1em;
+    font-style: bold;
 }
 .home p {
     white-space: pre-wrap;
+    font-size: 24px;
+    font-style: bold;
+    
 }
+.background {
+    width: 100vw;
+    height: 458px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 40px;
+    left: -20px;
+}
+.background .scrollButton {
+    width: 32px;
+    height: 79px;
+    border-radius: 100px;
+    margin-top: 30px;
+    position: absolute;
+}
+.background span {
+    width: 15px;
+    height: 15px;
+    background: transparent;
+    position: absolute;
+    margin-top: 50px;
+    border-radius: 100%;
+    border: 1px solid black;
+}
+
 .cta {
     display: block;
     color: black;
