@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import Layout from "../components/layout"
+import Layout from "../components/Layout/layout"
 
 
 const BlogPost = ({node}) =>{
@@ -12,11 +12,11 @@ const BlogPost = ({node}) =>{
     </li>
   )
 }
- 
+
 const BlogPage = ({data}) => (
   <Layout>
     <ul>
-      {data.allContentfulBlog.edges.map((edge,i)=> <BlogPost node={edge.node} key={i}/>)}
+      {/** {data.allContentfulBlog.edges.map((edge,i)=> <BlogPost node={edge.node} key={i}/>)} */}
     </ul>
   </Layout>
 )
@@ -32,7 +32,7 @@ export const pageQuery = graphql`
       sort: {
         fields: [date], order:DESC
       }
-      
+
       ){
       edges{
         node{
@@ -56,8 +56,8 @@ export const pageQuery = graphql`
 
 
 /**
- * 
- * 
+ *
+ *
  * <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <h1>Hi people</h1>

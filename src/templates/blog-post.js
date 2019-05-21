@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout/layout"
 
 
 class BlogPost extends Component {
@@ -21,7 +21,7 @@ class BlogPost extends Component {
           <div dangerouslySetInnerHTML={{__html: content.childMarkdownRemark.html}}/>
         </div>
       </Layout>
-      
+
     )
   }
 };
@@ -40,8 +40,8 @@ export const pageQuery = graphql`
                 html
               }
             }
-            
+
         }
     }
 `
-  
+

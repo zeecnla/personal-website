@@ -1,37 +1,45 @@
 import React from "react"
 import { Link } from "gatsby"
-import Layout from "../components/layout"
+import Layout from "../components/Layout/layout"
 import SEO from "../components/seo"
 
 import Img from 'gatsby-image'
+import Logo from '../images/logo.jpg'
 import '../components/css/index.css'
-import background from '../images/assets/background.svg'
+import Background from '../images/background.inline.svg'
 
 const IndexPage = ({data}) => (
   <Layout>
-    <SEO title="Home" keywords={[`cesar`, `melchor`, `react`]} />
-    <div className="home">
-      <h2 className="title">Hi, I'm Cesar</h2>
-      <p>I am a Software Engineer bases in Los Angeles</p>
-      
-    </div>
-    <div className="background">
-      <img style={{
-        width: `100%`,
-        height: `100%`
-      }} src={background} alt="Triangle in the background"/>
-      <input class="scrollButton" type="button"></input>
-      <span></span>
-    </div>
-    <ProjectsSection data={data}/>
+      <SEO title="Home" keywords={[`cesar`, `melchor`, `react`]} />
+
+      <div className="home">
+        <div style={{
+          position:`absolute`,
+          width:`100%`
+        }}>
+          <Background />
+        </div>
+        <div className="intro">
+            <p
+              className="title"
+              style={{
+                fontSize: `35px`,
+                marginTop: 0,
+                marginBottom: `10px`
+              }}
+            >Hi, <br/>I'm Cesar Melchor</p>
+            <p style={{
+              fontSize: `15px`,
+              margin: 0
+            }}>Full Stack Developer</p>
+        </div>
+      </div>
+      <ProjectsSection data={data}/>
   </Layout>
 )
 
 const ProjectsSection = ({data}) => (
   <section>
-      <h2 style={{
-          textAlign:`center`
-      }}>Projects</h2>
       <ul style={{
           padding:0,
           textAlign:`center`
@@ -45,28 +53,16 @@ const ProjectItem = ({node}) => {
 
   {console.log(node)}
   return(
-      <li style={{
-          display:`inline-block`,
-          boxShadow:`0 4px 8px 0 rgba(0,0,0,0.2)`,
-          background:`#fff`,
-          margin: `20px`,
-          textAlign:`center`,
-          width:`240px`,
-          maxWidth:`240px`,
-          padding:`10px`,
-          borderRadius:`20px`
-      }}>
-          <a href={node.projectUrl}>
-              
-          </a>
+      <li className="project-card">
+
+        <Link to={node.slug}>
           <div style={{
               padding:`2px 16px`
-          }}> 
+          }}>
               <h3>{node.name}</h3>
               <p>{node.description}</p>
-              <a href={node.repositoryUrl}>Github</a>
-              <a href={node.prjectUrl}></a>
           </div>
+        </Link>
       </li>
   )
 };
@@ -83,6 +79,7 @@ query projectQuery {
         repositoryUrl
         description
         projectUrl
+        slug
         logo {
           fixed(width: 100, height: 100) {
               ...GatsbyContentfulFixed
@@ -97,8 +94,8 @@ query projectQuery {
 
 
 /**
- * 
- * 
+ *
+ *
  * <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <h1>Hi people</h1>

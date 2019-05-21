@@ -1,4 +1,13 @@
+/**MArgin top from the navigation will always
+    be 50px
+**/
 
+.home {
+    height:345px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .home h2 {
     padding-top:10vh;
     font-size: 24px;
@@ -10,35 +19,7 @@
     white-space: pre-wrap;
     font-size: 24px;
     font-style: bold;
-    
 }
-.background {
-    width: 100vw;
-    height: 458px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    padding-top: 40px;
-    left: -20px;
-}
-.background .scrollButton {
-    width: 32px;
-    height: 79px;
-    border-radius: 100px;
-    margin-top: 30px;
-    position: absolute;
-}
-.background span {
-    width: 15px;
-    height: 15px;
-    background: transparent;
-    position: absolute;
-    margin-top: 50px;
-    border-radius: 100%;
-    border: 1px solid black;
-}
-
 .cta {
     display: block;
     color: black;
@@ -53,7 +34,80 @@
     cursor: pointer;
 }
 
+.project-card {
+    display:inline-block;
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background:#fff;
+    margin: 20px 0px;
+    height:300px;
+    text-align:center;
+    padding:10px;
+    border-radius:10px;
+}
+	#home {
+	    clip-path: url(#cache);
+	}
+
+	#red {
+	    fill: none;
+	    opacity: 0.15;
+	    stroke: #CE1B5F;
+	    stroke-width: 12;
+	    stroke-miterlimit: 10;
+	    animation: show 4s;
+	    animation-fill-mode: forwards;
+	    animation-iteration-count: infinite;
+	    animation-timing-function: ease-in-out;
+	}
+
+	#blue {
+	    fill: none;
+	    opacity: 0.15;
+	    stroke: #06A1C4;
+	    stroke-width: 12;
+	    stroke-miterlimit: 10;
+	    animation: show 4s;
+	    animation-fill-mode: forwards;
+	    animation-iteration-count: infinite;
+	    animation-timing-function: ease-in-out;
+	}
+
+	#light-blue {
+	    fill: none;
+	    opacity: 0.15;
+	    stroke: #06A1C4;
+	    stroke-width: 6;
+	    stroke-miterlimit: 10;
+	    stroke-dasharray: 200;
+	    stroke-dashoffset: 800;
+	    animation: draw 4s;
+	    animation-fill-mode: forwards;
+	    animation-iteration-count: infinite;
+	    animation-timing-function: ease-in-out;
+	}
+
+	@keyframes draw {
+	    to {
+	        stroke-dashoffset: 0;
+	    }
+	}
+
+	@keyframes show {
+	    0% {
+	        opacity: 0.15;
+	    }
+
+	    50% {
+	        opacity: 0.2;
+	    }
+
+	    100% {
+	        opacity: 0.15;
+	    }
+	}
+
+
 @media only screen and (min-width: 500px){
 
-    
+
 }

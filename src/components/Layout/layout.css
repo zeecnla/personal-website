@@ -8,8 +8,8 @@ body, html {
   min-height: 100%;
   overflow-x: hidden;
   font-family: 'Montserrat', sans-serif;
-  background: #C0C0C0;/**var(--ghost);**/
-  color: black; /*var(--dianne);*/
+  background: white; /**var(--ghost);**/
+  color: var(--dianne);
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -23,9 +23,14 @@ a {
 .fa {
   font-size: 12px;
 }
+i {
+  background-size: 100vh 100vw;
+}
+.container {
+    padding: 20px;
+    height: 100%;
+}
 
 @media (min-width: 600px) {
-  html {
-    font-size: 100%;
-  }
+
 }

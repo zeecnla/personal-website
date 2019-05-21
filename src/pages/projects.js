@@ -1,12 +1,12 @@
 import React from "react"
 import Img from 'gatsby-image'
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout/layout"
 
 const page = ()=>(
     <h2>hello</h2>
 )
-export default page; 
+export default page;
 {/*
 const ProjectItem = ({node}) => {
 
@@ -27,7 +27,7 @@ const ProjectItem = ({node}) => {
             </a>
             <div style={{
                 padding:`2px 16px`
-            }}> 
+            }}>
                 <h3>{node.name}</h3>
                 <p>{node.description}</p>
                 <a href={node.repositoryUrl}>Github</a>
@@ -73,5 +73,5 @@ query projectQuery {
       }
     }
   }
-  
+
 `*/}

@@ -8,12 +8,12 @@
 const path = require('path');
 exports.createPages = ({graphql, actions}) =>{
     const {createPage} = actions;
-    return new Promise((resolve,reject) => {
-        const blogPostTemplate = './src/templates/blog-post.js';
+    return new Promise((resolve, reject) => {
+        const projectPostTemplate = './src/templates/project-post.js';
         resolve(
             graphql(`
                 {
-                    allContentfulBlog(limit:100){
+                    allContentfulProject(limit:100){
                         edges {
                             node {
                                 id
@@ -23,20 +23,21 @@ exports.createPages = ({graphql, actions}) =>{
                     }
                 }
             `).then((result) => {
-                if(result.errors){
+                if (result.errors) {
                     reject(result.errors);
                 }
-                result.data.allContentfulBlog.edges.forEach((edge) =>{
+                result.data.allContentfulProject.edges.forEach((edge) => {
                     createPage({
                         path: edge.node.slug,
-                        component:path.resolve('src/templates/blog-post.js'),
+                        component: path.resolve('src/templates/project-post.js'),
                         context: {
-                            slug:edge.node.slug
+                            slug: edge.node.slug
                         },
                     });
                 })
-                return 
+                return
             })
         )
-    })
+    });
+
 }

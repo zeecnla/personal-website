@@ -1,70 +1,42 @@
 
-img {
-    width: 40px;
-    cursor: pointer;
-    margin:auto;
-}
-.fa-times-circle {
-    color:var(--ghost);      
-}
-.not-active {
-    display: none;
-}
-.active {
-    position: absolute;
-    display: flex;
-    color: black;/*var(--ghost);   */
-    background: white;/*var(--dianne);*/
-    width: 100%;
-    left: 0;
-    top: 0;
-    height: 100%;
-    -webkit-transition: fill 4s; 
-    transition: fill 4s; 
-    font-weight: bold;
-    text-align: center;
-    z-index: 10;
-}
 aside {
-    color:black;
+    color:var(--dianne);
     display: grid;
-    grid-template-columns: auto 40px;
-    padding:20px;
+    grid-template-columns: 20px auto;
+    /**background: var(--ghost);**/
 }
-nav a {
-    text-decoration: none;
-
-}
-nav ul {
+.navigation ul {
     list-style: none;
-    width:100%;
-    margin:0;
-    padding:25px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
-nav ul li {
-    padding: 0 25px;
+.navigation ul li {
+    padding: 0;
     display: flex;
     text-align: center;
     align-items: center;
     justify-content: center;
 }
-.navigation {
-    position: relative;
-    margin:0;
-    padding:0;
-    font-size: 1.5em;
-}
-.navigation li a {
+.navigation ul li a {
     text-decoration: none;
     text-transform: uppercase;
     font-size: 1em;
     display: inline-block;
-    margin: 1em 3em;
-    color: black;
+    margin: 0 10px;
+    text-decoration: none;
+    color:inherit;
     text-align: center;
+    border-bottom:1px solid transparent;
+}
+.navigation a:hover {
+    border-bottom: 1px solid var(--dianne);
 }
 
-/* 
+/*
   ##Device = Desktops
   ##Screen = 1281px to higher resolution desktops
 */
@@ -75,7 +47,7 @@ nav ul li {
 
     }
 
-    /* 
+    /*
     ##Device = Laptops, Desktops
     ##Screen = B/w 1025px to 1280px
     */
@@ -86,7 +58,7 @@ nav ul li {
 
     }
 
-    /* 
+    /*
     ##Device = Tablets, Ipads (portrait)
     ##Screen = B/w 768px to 1024px
     */
@@ -97,7 +69,7 @@ nav ul li {
 
     }
 
-    /* 
+    /*
     ##Device = Tablets, Ipads (landscape)
     ##Screen = B/w 768px to 1024px
     */
@@ -108,7 +80,7 @@ nav ul li {
 
     }
 
-    /* 
+    /*
     ##Device = Low Resolution Tablets, Mobiles (Landscape)
     ##Screen = B/w 481px to 767px
     */
@@ -119,7 +91,7 @@ nav ul li {
 
     }
 
-    /* 
+    /*
     ##Device = Most of the Smartphones Mobiles (Portrait)
     ##Screen = B/w 320px to 479px
     */
