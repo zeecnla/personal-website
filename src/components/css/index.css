@@ -3,10 +3,12 @@
 **/
 
 .home {
-    height:345px;
+    height:250px;
     display: flex;
     justify-content: center;
-    align-items: center;
+	align-items: center;
+	width:100%;
+	overflow: hidden;
 }
 .home h2 {
     padding-top:10vh;
@@ -33,81 +35,110 @@
     margin: 2em 0;
     cursor: pointer;
 }
+.project-container {
+	text-align: center;
+	display: grid;
+	grid-template-columns: 300px;
+	grid-column-gap: 15px;
+	grid-row-gap:15px;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	justify-content: center;
 
-.project-card {
-    display:inline-block;
-    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    background:#fff;
-    margin: 20px 0px;
-    height:300px;
-    text-align:center;
-    padding:10px;
-    border-radius:10px;
 }
-	#home {
-	    clip-path: url(#cache);
+.project-card {
+	display: inline-block;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	background: #fff;
+	margin: 0px 0px 20px 0px;
+	height: 300px;
+	text-align: center;
+	padding: 10px;
+	border-top-right-radius: 25px;
+	width: 90%;
+	max-width:500px;
+	border-bottom-left-radius: 25px;
+}
+#home {
+	clip-path: url(#cache);
+}
+
+#red {
+	fill: none;
+	opacity: 0.15;
+	stroke: #CE1B5F;
+	stroke-width: 12;
+	stroke-miterlimit: 10;
+	animation: show 4s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+
+#blue {
+	fill: none;
+	opacity: 0.15;
+	stroke: #06A1C4;
+	stroke-width: 12;
+	stroke-miterlimit: 10;
+	animation: show 4s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+
+#light-blue {
+	fill: none;
+	opacity: 0.15;
+	stroke: #06A1C4;
+	stroke-width: 6;
+	stroke-miterlimit: 10;
+	stroke-dasharray: 200;
+	stroke-dashoffset: 800;
+	animation: draw 4s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+
+@keyframes draw {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes show {
+	0% {
+		opacity: 0.15;
 	}
 
-	#red {
-	    fill: none;
-	    opacity: 0.15;
-	    stroke: #CE1B5F;
-	    stroke-width: 12;
-	    stroke-miterlimit: 10;
-	    animation: show 4s;
-	    animation-fill-mode: forwards;
-	    animation-iteration-count: infinite;
-	    animation-timing-function: ease-in-out;
+	50% {
+		opacity: 0.2;
 	}
 
-	#blue {
-	    fill: none;
-	    opacity: 0.15;
-	    stroke: #06A1C4;
-	    stroke-width: 12;
-	    stroke-miterlimit: 10;
-	    animation: show 4s;
-	    animation-fill-mode: forwards;
-	    animation-iteration-count: infinite;
-	    animation-timing-function: ease-in-out;
+	100% {
+		opacity: 0.15;
 	}
-
-	#light-blue {
-	    fill: none;
-	    opacity: 0.15;
-	    stroke: #06A1C4;
-	    stroke-width: 6;
-	    stroke-miterlimit: 10;
-	    stroke-dasharray: 200;
-	    stroke-dashoffset: 800;
-	    animation: draw 4s;
-	    animation-fill-mode: forwards;
-	    animation-iteration-count: infinite;
-	    animation-timing-function: ease-in-out;
+}
+@media only screen and (min-width:350px){
+	.project-container {
+		margin-top: 50px;
 	}
-
-	@keyframes draw {
-	    to {
-	        stroke-dashoffset: 0;
-	    }
+}
+@media only screen and (min-width:400px){
+	.home {
+		margin-top:30px;
+		position: relative;
 	}
-
-	@keyframes show {
-	    0% {
-	        opacity: 0.15;
-	    }
-
-	    50% {
-	        opacity: 0.2;
-	    }
-
-	    100% {
-	        opacity: 0.15;
-	    }
+	.project-container {
+		margin-top:50px;
 	}
+}
 
-
-@media only screen and (min-width: 500px){
-
+@media only screen and (min-width: 700px) {
+	.project-container {
+		grid-template-columns: 1fr 1fr;
+	}
 
 }

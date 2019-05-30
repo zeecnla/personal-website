@@ -31,6 +31,11 @@ i {
     height: 100%;
 }
 
-@media (min-width: 600px) {
+@media only screen and (min-width: 700px) {
+  .container {
+    width:80%;
+    margin:0 auto;
+
+  }
 
 }

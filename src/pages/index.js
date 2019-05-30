@@ -3,22 +3,21 @@ import { Link } from "gatsby"
 import Layout from "../components/Layout/layout"
 import SEO from "../components/seo"
 
+import Background from '../images/background.inline.svg'
 import Img from 'gatsby-image'
 import Logo from '../images/logo.jpg'
 import '../components/css/index.css'
-import Background from '../images/background.inline.svg'
 
 const IndexPage = ({data}) => (
   <Layout>
       <SEO title="Home" keywords={[`cesar`, `melchor`, `react`]} />
 
       <div className="home">
-        <div style={{
-          position:`absolute`,
-          width:`100%`
-        }}>
-          <Background />
-        </div>
+        <Background
+          style={{
+            position: `absolute`
+          }}
+        />
         <div className="intro">
             <p
               className="title"
@@ -40,12 +39,12 @@ const IndexPage = ({data}) => (
 
 const ProjectsSection = ({data}) => (
   <section>
-      <ul style={{
+      <div className="project-container" style={{
           padding:0,
           textAlign:`center`
       }}>
           {data.allContentfulProject ? data.allContentfulProject.edges.map((edge,i)=> <ProjectItem node={edge.node} key={i}/>) : <p>no projects</p>}
-      </ul>
+      </div>
   </section>
 )
 
@@ -53,17 +52,16 @@ const ProjectItem = ({node}) => {
 
   {console.log(node)}
   return(
-      <li className="project-card">
+      <div className="project-card">
 
         <Link to={node.slug}>
           <div style={{
               padding:`2px 16px`
           }}>
               <h3>{node.name}</h3>
-              <p>{node.description}</p>
           </div>
         </Link>
-      </li>
+      </div>
   )
 };
 

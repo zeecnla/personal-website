@@ -18,17 +18,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-react-svg`,
       options: {
-        rule: {
-          include: /\.inline\.svg$/
-        }
+        rule:
+          {
+            include: /\.inline\.svg$/
+          }
       }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `portfolio`,
-        path: `${__dirname}/src/images/portfolio`,
-      },
     },
     {
       resolve: `gatsby-source-filesystem`,
