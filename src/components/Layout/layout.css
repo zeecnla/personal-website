@@ -1,12 +1,31 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 :root {
   --ghost: #C2C8D4;
+  --back: #67809f;
   --dianne: #1D4455;
 }
-body, html {
+* {
+  margin:0;
+  padding:0;
+}
+html {
+  height:100%;
+  overflow-x:none;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  position: relative;
   margin: 0;
-  min-height: 100%;
-  overflow-x: hidden;
+  padding:0;
+  overflow-x: none;
+  overflow-y: scroll;
+  height:100%;
   font-family: 'Montserrat', sans-serif;
   background: white; /**var(--ghost);**/
   color: var(--dianne);
@@ -14,11 +33,46 @@ body, html {
   -webkit-text-size-adjust: 100%;
 }
 
+/**Backgroun colors css**/
+#home {
+  clip-path: url(#cache);
+}
+
+#red {
+  fill: none;
+  opacity: 0.15;
+  stroke: #CE1B5F;
+  stroke-width: 12;
+  stroke-miterlimit: 10;
+  animation: show 4s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+#blue {
+  fill: none;
+  opacity: 0.15;
+  stroke: #06A1C4;
+  stroke-width: 12;
+  stroke-miterlimit: 10;
+  animation: show 4s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
 ul {
   list-style-type: none;
 }
+li {
+  display: inline-block;
+  padding: 10px;
+}
 a {
   cursor: pointer;
+  text-decoration: inherit;
+  color:inherit;
 }
 .fa {
   font-size: 12px;
@@ -27,15 +81,26 @@ i {
   background-size: 100vh 100vw;
 }
 .container {
-    padding: 20px;
-    height: 100%;
+    padding: 0 20px 20px 20px;
+}
+nav ul li {
+  border-bottom: 1px solid transparent;
+}
+nav ul li :hover {
+  border-bottom-color: black;
+}
+nav a {
+  border-bottom: 1px solid transparent;
+}
+nav a:hover {
+  border-bottom: 1px solid black;
 }
 
-@media only screen and (min-width: 700px) {
+/* @media only screen and (min-width: 700px) {
   .container {
     width:80%;
     margin:0 auto;
 
   }
 
-}
+} */

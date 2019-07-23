@@ -2,8 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
-import Nav from "../Navigation/navigation"
-import Footer from "../Footer/footer"
+import Navbar from '../Navbar/navbar';
+import Footer from '../Footer/footer';
 import "./layout.css"
 
 const Layout = ({ children }) => (
@@ -18,9 +18,12 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <div class="container">
-        <Nav siteTitle={data.site.siteMetadata.title} />
-        <main>{children}</main>
+      <div style={{minHeight:'100%'}}>
+        <Navbar />
+        <div className="container">
+          <main>{children}</main>
+        </div>
+        <Footer/>
       </div>
     )}
   />
@@ -31,3 +34,4 @@ Layout.propTypes = {
 }
 
 export default Layout
+

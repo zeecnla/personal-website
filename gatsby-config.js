@@ -2,9 +2,25 @@ const { spaceId, accessToken } = require('./keys');
 
 module.exports = {
   siteMetadata: {
-  title: `cesar`,
+    title: `Cesar Melchor`,
+    greeting: `Hello 👋 I'm Cesar!`,
     description: `This is my portfolio site.`,
     author: `@zeecnla`,
+    social: [
+      {
+        name: "twitter",
+        url: "https://twitter.com/zeecnla"
+
+      },
+      {
+        name: "twitch",
+        url: "https://www.twitch.tv/zeecnla"
+      },
+      {
+        name: "github",
+        url: "https://www.github.com/zeecnla"
+      }
+    ]
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

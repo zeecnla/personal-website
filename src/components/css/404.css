@@ -1,11 +1,18 @@
+.page {
+  width:100%;
+  height: 100%;
+
+}
 .gohome {
     text-decoration:none;
     color:black;
     font-size:25px;
     font-style:bold;
     border: solid black 2px;
-    border-radius:20px; 
-    padding: 5px 20px
+    border-radius:20px;
+    margin-top:20px;
+    padding: 5px 20px;
+    display:inline-block;
   }
   .page h2{
     display:flex;
@@ -17,11 +24,7 @@
     letter-spacing:5px;
   }
   .info {
-    display:grid;
-    grid-template-columns: auto auto;
-    grid-gap: 50px;
-    align-items:center;
-    justify-content:center;
+    display:block;
     width:100%;
     height:80%;
   }
@@ -29,8 +32,9 @@
     width:450px;
     font-size: 25px;
     line-height:60px;
+    display:block;
   }
-
+/*
 @media only screen and (max-width:400px){
   .page h2{
     text-align: center;
@@ -45,4 +49,4 @@
   .gohome {
     text-align: center;
   }
-}
+} */

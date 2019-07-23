@@ -1,13 +1,20 @@
-import { Link } from "gatsby"
 import React from "react"
 import './footer.css'
-import github from '../../images/assets/footer/github.svg'
-import linkedin from '../../images/assets/footer/linkedin.svg'
-import twitter from '../../images/assets/footer/twitter.svg'
+
+import { StaticQuery, graphql } from 'gatsby'
 
 
-const Footer = ({ data }) => (
-    <footer className="footer">
+const FooterListElements = ({data}) => {
+    const { name, url } = data;
+    return(
+        <li>
+            <a href="url" className={`fa fa-${name}`}></a>
+        </li>
+    )
+};
+
+const Footer = ({data}) => (
+    <footer id="contact" className="footer">
         <div className="footer__content">
             <h2>Let's Work Togethor</h2>
             <p>
@@ -16,29 +23,35 @@ const Footer = ({ data }) => (
                 message. I’m AVAILABLE for any projects you
                 want to work with.
             </p>
-            <p><a href="mailto:hello@cesarmelchor.me">Email Me</a></p>
-            <p><a>Get my resume</a></p>
+            <p><a className="link" href="mailto:hello@cesarmelchor.me">Email Me</a></p>
+            <p><a className="link" >Get my resume</a></p>
 
 
             <div className="social">
                 <ul>
-                    <li style={{
-                        padding: `0 10px 0 0`
-                    }}>
-                        <img id="github" src={github} />
-                    </li>
-                    <li>
-                        <img id="linkedin" src={linkedin} />
-                    </li>
-                    <li>
-                        <img id="twitter" src={twitter} />
-                    </li>
+                    {data.site.siteMetadata.social.map((data,index) => <FooterListElements data={data} key ={index}/>)}
                 </ul>
             </div>
         </div>
     </footer>
 )
-export default Footer
+export default props => (
+    <StaticQuery
+        query={graphql`
+        query footerQuery {
+            site {
+                siteMetadata {
+                    social {
+                        name
+                        url
+                    }
+                }
+            }
+        }
+        `}
+        render={data => <Footer data={data} {...props} />}
+    />
+)
 
 
 

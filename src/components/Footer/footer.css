@@ -1,11 +1,6 @@
 .footer {
     background: rgb(175, 130, 130);
     padding: 20px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom:0;
-    margin: 0;
     color:white;
 }
 .footer a {
@@ -16,7 +11,7 @@
     border-bottom: 1px solid transparent;
 }
 .footer a:hover {
-    border-bottom:1px solid black;
+    border-bottom:1px solid #fff;
 }
 .fa-times-circle {
     color: var(--ghost);
@@ -24,20 +19,25 @@
 .social ul {
     margin:0;
     padding:0;
+    padding-top:2em;
 }
 .social ul li {
      display: inline;
      padding:0 10px;
 }
+footer p {
+    padding-top:2em;
+}
+
 img {
     width: 30px;
     cursor: pointer;
     margin: auto;
 }
 
-@media only screen and (min-width: 700px) {
+/* @media only screen and (min-width: 700px) {
     .footer__content {
         width: 80%;
         margin: 0 auto;
     }
-}
+} */
