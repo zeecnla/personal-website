@@ -1,7 +1,42 @@
 import React from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
-import { graphql, StaticQuery } from 'gatsby'
+import { graphql, StaticQuery } from 'gatsby';
+import {device} from '../components/device'
+
+const ProjectContainer = styled.div`
+  width:100%;
+  height:100%;
+  padding-top:2em;
+  display:grid;
+  grid-template-columns:1fr;
+  grid-auto-flow:row;
+  justify-content:center;
+  align-items:center;
+  grid-gap:2em;
+
+
+
+  @media ${device.tablet} {
+    grid-template-columns:repeat(2, 1fr);
+  }
+  @media ${device.laptopL}{
+    grid-template-columns:repeat(2, 1fr)
+  }
+`;
+const ProjectCard = styled.div`
+
+  width:100%;
+  background:rgb(6, 161, 196, 0.15);
+  display:grid;
+  grid-gap:1em;
+  grid-template-columns: 1fr;
+  flex-direction:column;
+  justify-content:center;
+  margin: 0px 0px 2em 0px;
+  border-radius:20px;
+
+`
 
 const Projects = ({data}) => (
 
@@ -10,11 +45,7 @@ const Projects = ({data}) => (
     height:`100%`
     }}>
     <h2>Projects</h2>
-    <div style={{
-      width:`100%`,
-      height:`100%`,
-      paddingTop:`2em`
-    }}>{data.allContentfulProject.edges.map(({ node }, index) => (<Item node={node} key={index}/>))}</div>
+    <ProjectContainer>{data.allContentfulProject.edges.map(({ node }, index) => (<Item node={node} key={index} />))}</ProjectContainer>
   </div>
 )
 const Item = ({node}) => {
@@ -22,25 +53,12 @@ const Item = ({node}) => {
     name,
     description,
     projectUrl,
-    respositoryUrl,
+    repositoryUrl,
     logo
      } = node;
-  console.log(node);
   return(
-    <div style={{
-      maxWith:`500px`,
-      maxHeight:`500px`,
-      width:`100%`,
-      height:`100%`,
-      background:'tomato',
-      display:'grid',
-      gridGap:'1em',
-      gridTemplateColumns: '1fr',
-      flexDirection:'column',
-      justifyContent:'center',
-      margin: `0px 0px 2em 0px`,
-      cursor:`pointer`}}>
-      {logo && <Img fixed={logo.fixed} />}
+    <ProjectCard>
+      {logo && <Img fluid={logo.fluid} />}
       <div style={{
       padding:'10px 20px 20px 20px'}}>
       <h3>{name}</h3>
@@ -49,11 +67,11 @@ const Item = ({node}) => {
         display:'inline-block',
         paddingTop:'2em'
       }}>
-        <a style={{paddingRight:'1em'}} href={projectUrl}>proejcy</a>
-        <a href={respositoryUrl}>respositrory</a>
+        <a id="globe" style={{paddingRight:'1em'}} href={projectUrl}><i className="fa fa-2x fa-globe"></i></a>
+          <a id="github" href={repositoryUrl}><i className="fa fa-github fa-2x"></i></a>
       </div>
       </div>
-    </div>)
+    </ProjectCard>)
 }
 
 export default props => (
@@ -69,8 +87,8 @@ export default props => (
               projectUrl
               slug
               logo {
-                fixed(width: 445, height:296) {
-                ...GatsbyContentfulFixed
+                fluid(maxWidth: 445, maxHeight:296) {
+                ...GatsbyContentfulFluid
                 }
               }
             }

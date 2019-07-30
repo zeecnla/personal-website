@@ -3,6 +3,24 @@
 **/
 :root {
 	--primary-color: black;
+	--twitch:#6441a5;
+	--twitter:#38A1F3;
+	--github: #000;
+}
+#twitch :hover {
+	color: var(--twitch);
+}
+
+#twitter :hover {
+	color: var(--twitter);
+}
+
+#github :hover {
+	color: var(--github);
+}
+#globe :hover {
+	color:rgb(175, 130, 130);
+
 }
 
 /*

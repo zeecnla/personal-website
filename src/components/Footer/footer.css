@@ -1,20 +1,10 @@
-.footer {
-    background: rgb(175, 130, 130);
-    padding: 20px;
-    color:white;
-}
-.footer a {
+
+footer a {
     text-decoration: none;
     color:inherit;
     position: relative;
     margin: 10px 0;
     border-bottom: 1px solid transparent;
-}
-.footer a:hover {
-    border-bottom:1px solid #fff;
-}
-.fa-times-circle {
-    color: var(--ghost);
 }
 .social ul {
     margin:0;
@@ -23,7 +13,10 @@
 }
 .social ul li {
      display: inline;
-     padding:0 10px;
+     padding: 0 1em 0 0;
+}
+.link:hover {
+    border-bottom: solid #fff 1px;
 }
 footer p {
     padding-top:2em;

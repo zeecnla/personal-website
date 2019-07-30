@@ -1,11 +1,12 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import styled, { keyframes } from 'styled-components';
-
+import Background from '../images/background.inline.svg'
 const LandingPage = styled.div`
-    height:250px;
+    height:75vh;
     display:grid;
     align-items:center;
+    position:relative;
 `;
 const fadeout = keyframes`
   from {
@@ -18,7 +19,7 @@ const fadeout = keyframes`
     transform:translateY(20px);
   }
 `
-const Cta = styled.div`
+const Cta = styled.a`
     display: block;
     justify-content:center;
     align-items:center;
@@ -28,7 +29,7 @@ const Cta = styled.div`
     height: 4.5em;
     border-radius: 40px;
     cursor: pointer;
-    margin: 0 auto -15px auto;
+    margin: -15px auto auto auto;
 
   ::before {
     content:'';
@@ -50,20 +51,23 @@ const Landing = ({data}) => {
     return (
         <>
             <LandingPage>
-                {/* <Background style={{
-                    position:'absolute',
-                    width:'500px'
-                }}/> */}
-                <h1 style={{
-                    width:'220px',
-                    wordBreak: `break-all`,
-                    fontSize:`2.5em`,
-                    lineHeight:`1.5em`,
-                    margin:0
-                    }}>{greeting}</h1>
-            </LandingPage>
+                    <h1 style={{
+                        width: '220px',
+                        wordBreak: `break-all`,
+                        fontSize: `2.5em`,
+                        lineHeight: `1.5em`,
+                        margin: 0,
+                        zIndex: '10',
+                        position: 'absolute'
 
-            <a href="#about"><Cta/></a>
+                    }}>{greeting}</h1>
+                    <Background style={{
+                      width:`100%`,
+                      height:'100%'
+                    }}/>
+                </LandingPage>
+
+            <Cta href="#about"/>
 
         </>
     )

@@ -12,10 +12,11 @@ import Projects from '../sections/projects';
 
 const IndexPage = () => (
   <Layout>
+
       <SEO title="Home" keywords={[`cesar`, `melchor`, `react`]} />
-        <Landing/>
-        <About/>
-        <Projects/>
+      <Landing/>
+      <About/>
+      <Projects/>
   </Layout>
 )
 

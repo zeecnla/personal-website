@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { device } from '../device'
 
 const Navigation = styled.nav`
     display: grid;
@@ -7,6 +8,15 @@ const Navigation = styled.nav`
     grid-template-columns: auto;
     text-align:right;
     padding:20px 10px;
+
+    @media ${device.tablet}{
+        width:80%;
+        margin:0 auto;
+    }
+    @media ${device.laptopL}{
+    width:60%;
+    marginn:auto;
+  }
 `;
 
 
