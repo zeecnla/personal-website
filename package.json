@@ -9,7 +9,7 @@
     "animate.css": "^3.7.1",
     "bootstrap": "^4.3.1",
     "font-awesome": "^4.7.0",
-    "gatsby": "^2.3.25",
+    "gatsby": "^2.13.44",
     "gatsby-background-image": "^0.6.2",
     "gatsby-cli": "^2.7.17",
     "gatsby-image": "^2.2.7",
@@ -17,7 +17,7 @@
     "gatsby-plugin-offline": "^2.0.24",
     "gatsby-plugin-react-helmet": "^3.1.2",
     "gatsby-plugin-react-svg": "^2.1.1",
-    "gatsby-plugin-sharp": "^2.0.35",
+    "gatsby-plugin-sharp": "^2.2.9",
     "gatsby-source-contentful": "^2.0.29",
     "gatsby-source-filesystem": "^2.0.23",
     "gatsby-transformer-remark": "^2.2.4",
@@ -38,7 +38,8 @@
     "build": "gatsby clean && gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "deploy": "npm run build && gh-pages -b 'gh-pages' -d public "
   },
   "devDependencies": {
     "gh-pages": "^2.0.1"
