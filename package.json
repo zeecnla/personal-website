@@ -8,6 +8,7 @@
     "@fortawesome/fontawesome-free": "^5.9.0",
     "animate.css": "^3.7.1",
     "bootstrap": "^4.3.1",
+    "dotenv": "^8.0.0",
     "font-awesome": "^4.7.0",
     "gatsby": "^2.13.44",
     "gatsby-background-image": "^0.6.2",
@@ -39,7 +40,7 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "deploy": "npm run build && gh-pages -b 'gh-pages' -d public "
+    "deploy": "gatsby build && gh-pages -b 'gh-pages' -d public "
   },
   "devDependencies": {
     "gh-pages": "^2.0.1"

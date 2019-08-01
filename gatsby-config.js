@@ -1,9 +1,28 @@
-const { spaceId, accessToken } = require('./keys');
+
+var spaceId;
+var accessToken;
+
+const environment = process.env.NODE_ENV;
+
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+console.log(environment);
+
+if (environment !== 'production') {
+  spaceId = process.env.APP_SPACE_ID;
+  accessToken = process.env.APP_ACCESS_TOKEN;
+} else {
+  spaceId = process.env.GATSBY_SPACE_ID;
+  accessToken = process.env.GATSBY_ACCESS_TOKEN;
+
+}
+
 
 module.exports = {
   siteMetadata: {
     title: `Cesar Melchor`,
-    greeting: `Hello 👋 I'm Cesar!`,
+    greeting: `Hello 👋, I'm Cesar!`,
     description: `This is my portfolio site.`,
     author: `@zeecnla`,
     social: [
@@ -50,8 +69,8 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId:spaceId,
-        accessToken:accessToken
+        spaceId: spaceId,
+        accessToken: accessToken
       }
     },
     `gatsby-transformer-sharp`,
