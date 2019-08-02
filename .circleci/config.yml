@@ -20,6 +20,7 @@ jobs:
       - checkout
 
       - run: npm install
+      - run: npm install -g npm
       - run: npm run build:ci
       - run: npm run deploy:ci
       # run tests!
