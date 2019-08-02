@@ -41,8 +41,8 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "deploy": "gh-pages -b 'gh-pages' -d public ",
-    "build:ci": "node_modules/.bin/gatsby build"
+    "deploy:ci": "gh-pages -b 'gh-pages' -d public ",
+    "build:ci": "gatsby clean && node_modules/.bin/gatsby build"
 
   },
   "devDependencies": {
