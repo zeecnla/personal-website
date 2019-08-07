@@ -20,8 +20,8 @@ jobs:
       - checkout
 
       - run: sudo npm install -g npm@latest
-      - run: npm install
-      - run: npm run build:ci
-      - run: npm run deploy:ci
+      - run: yarn install
+      - run: yarn run build:ci
+      - run: yarn run deploy:ci
       # run tests!
       - run: npm test
