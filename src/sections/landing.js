@@ -60,7 +60,7 @@ const Landing = ({data}) => {
                         zIndex: '10',
                         position: 'absolute'
 
-                    }}>{greeting}</h1>
+                    }}>Hello 👋,<br/> I'm Cesar!</h1>
                     <Background style={{
                       width:`100%`,
                       height:'100%'
