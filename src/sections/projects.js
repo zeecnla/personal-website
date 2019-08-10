@@ -67,7 +67,7 @@ const Item = ({node}) => {
         display:'inline-block',
         paddingTop:'2em'
       }}>
-        <a id="globe" style={{paddingRight:'1em'}} href={projectUrl}><i className="fa fa-2x fa-globe"></i></a>
+        <a id="globe" style={{paddingRight:'1em'}} href={projectUrl == null ? "#" : projectUrl}><i className="fa fa-2x fa-globe"></i></a>
           <a id="github" href={repositoryUrl}><i className="fa fa-github fa-2x"></i></a>
       </div>
       </div>
