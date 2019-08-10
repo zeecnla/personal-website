@@ -34,12 +34,12 @@ const FooterListElements = ({data}) => {
 const Footer = ({data}) => (
     <FooterDiv id="contact">
         <FooterContent>
-            <h2>Let's Work Togethor</h2>
+            <h2>Let's Work Together</h2>
             <p>
                 If you want to chat about a project you want
                 help with or need any advice, just drop me a
                 message. I’m AVAILABLE for any projects you
-                want to work with.
+                want to work on.
             </p>
             <p><a className="link" href="mailto:hello@cesarmelchor.me">Email Me</a></p>
 
