@@ -42,7 +42,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "deploy:ci": "gh-pages -b 'gh-pages' -d public ",
-    "build:ci": "gatsby clean && gatsby build"
+    "build:ci": "gatsby clean && gatsby build && cp ./src/CNAME public/"
   },
   "devDependencies": {
     "gh-pages": "^2.0.1"
