@@ -40,7 +40,10 @@ const Cta = styled.a`
     margin: 7px;
     width: 20px;
     height:20px;
-    animation: ${fadeout} 1.5s linear infinite
+    animation: ${fadeout} 1.5s linear infinite;
+    -webkit-animation: ${fadeout} 1.5s linear infinite; /* Safari 4+ */
+    -moz-animation:    ${fadeout} 1.5s linear infinite; /* Fx 5+ */
+    -o-animation:      ${fadeout} 1.5s linear infinite; /* Opera 12+ */
 
   }
 

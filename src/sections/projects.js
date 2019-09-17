@@ -58,7 +58,7 @@ const Item = ({node}) => {
      } = node;
   return(
     <ProjectCard>
-      {logo && <Img fluid={logo.fluid} />}
+      {logo && <a href={projectUrl == null ? "#" : projectUrl}> <Img fluid={logo.fluid} /></a>}
       <div style={{
       padding:'10px 20px 20px 20px'}}>
       <h3>{name}</h3>
@@ -67,8 +67,7 @@ const Item = ({node}) => {
         display:'inline-block',
         paddingTop:'2em'
       }}>
-        <a id="globe" style={{paddingRight:'1em'}} href={projectUrl == null ? "#" : projectUrl}><i className="fa fa-2x fa-globe"></i></a>
-          <a id="github" href={repositoryUrl}><i className="fa fa-github fa-2x"></i></a>
+        <a id="github" href={repositoryUrl}><i className="fa fa-github fa-2x"></i></a>
       </div>
       </div>
     </ProjectCard>)
