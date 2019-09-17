@@ -11,11 +11,19 @@ const LandingPage = styled.div`
 const fadeout = keyframes`
   0% {
     opacity:1;
+    -ms-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -o-transform: translateY(0);
     transform:translateY(0);
   }
 
   100% {
     opacity:0;
+    -ms-transform: translateY(20px);
+    -moz-transform: translateY(20px);
+    -webkit-transform: translateY(20px);
+    -o-transform: translateY(20px);
     transform:translateY(20px);
   }
 `
@@ -44,6 +52,7 @@ const Cta = styled.a`
     -webkit-animation: ${fadeout} 1.5s linear infinite; /* Safari 4+ */
     -moz-animation:    ${fadeout} 1.5s linear infinite; /* Fx 5+ */
     -o-animation:      ${fadeout} 1.5s linear infinite; /* Opera 12+ */
+    -ms-animation:      ${fadeout} 1.5s linear infinite; /* Opera 12+ */
 
   }
 
