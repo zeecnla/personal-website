@@ -20,14 +20,13 @@ jobs:
       - checkout
 
       - run: sudo npm install -g npm@latest
-      - run: yarn install
-      - run: yarn run build:ci
+      - run: npm run build:ci
       - add_ssh_keys:
           fingerprints:
-            - "6f:3a:99:cb:c3:fe:f4:ba:eb:14:ec:11:ee:42:5e:84"
+            - ${SSH_KEY}
 
       - run: git config --global user.email "csrmelchor@gmail.com"
       - run: git config --global user.name "zeecnla"
-      - run: yarn run deploy:ci
+      - run: npm run deploy:ci
       # run tests!
       - run: npm test
