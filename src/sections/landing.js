@@ -38,10 +38,12 @@ const Cta = styled.a`
     border-radius: 40px;
     cursor: pointer;
     margin: -15px auto auto auto;
+`;
 
-  ::before {
-    content:'';
+const AnimatedBlock = styled.div`
+
     display:block;
+    cursor:pointer;
     position:absolute;
     background:black;
     border-radius: 100%;
@@ -53,9 +55,6 @@ const Cta = styled.a`
     -moz-animation:    ${fadeout} 1.5s linear infinite; /* Fx 5+ */
     -o-animation:      ${fadeout} 1.5s linear infinite; /* Opera 12+ */
     -ms-animation:      ${fadeout} 1.5s linear infinite; /* Opera 12+ */
-
-  }
-
 `;
 
 const Landing = ({data}) => {
@@ -78,7 +77,7 @@ const Landing = ({data}) => {
                     }}/>
                 </LandingPage>
 
-            <Cta href="#about"/>
+            <Cta href="#about"><AnimatedBlock/></Cta>
 
         </>
     )
