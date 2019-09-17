@@ -9,12 +9,12 @@ const LandingPage = styled.div`
     position:relative;
 `;
 const fadeout = keyframes`
-  from {
+  0% {
     opacity:1;
     transform:translateY(0);
   }
 
-  to {
+  100% {
     opacity:0;
     transform:translateY(20px);
   }
@@ -47,7 +47,6 @@ const Cta = styled.a`
 `;
 
 const Landing = ({data}) => {
-    const greeting = data.site.siteMetadata.greeting;
     return (
         <>
             <LandingPage>

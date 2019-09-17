@@ -7,14 +7,15 @@ const environment = process.env.NODE_ENV;
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
-console.log(environment);
 
 if (environment !== 'production') {
   spaceId = process.env.APP_SPACE_ID;
   accessToken = process.env.APP_ACCESS_TOKEN;
+  trackingId = process.env.APP_TRACKING_ID;
 } else {
   spaceId = process.env.GATSBY_SPACE_ID;
   accessToken = process.env.GATSBY_ACCESS_TOKEN;
+  trackingId = process.env.GATSBY_TRACKING_ID;
 
 }
 
@@ -58,6 +59,12 @@ module.exports = {
             include: /\.inline\.svg$/
           }
       }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: trackingId,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
