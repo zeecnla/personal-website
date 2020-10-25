@@ -1,5 +1,9 @@
 node_modules/
 .cache/
+content/
+src/components/Blog
+src/components/blog.js
+src/components/gallery.js
 public/
 keys.js
 scripts/

@@ -1,14 +1,13 @@
-
 var spaceId;
 var accessToken;
 
 const environment = process.env.NODE_ENV;
 
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env.${process.env.NODE_ENV}`
 });
 
-if (environment !== 'production') {
+if (environment !== "production") {
   spaceId = process.env.APP_SPACE_ID;
   accessToken = process.env.APP_ACCESS_TOKEN;
   trackingId = process.env.APP_TRACKING_ID;
@@ -16,9 +15,7 @@ if (environment !== 'production') {
   spaceId = process.env.GATSBY_SPACE_ID;
   accessToken = process.env.GATSBY_ACCESS_TOKEN;
   trackingId = process.env.GATSBY_TRACKING_ID;
-
 }
-
 
 module.exports = {
   siteMetadata: {
@@ -30,7 +27,6 @@ module.exports = {
       {
         name: "twitter",
         url: "https://twitter.com/zeecnla"
-
       },
       {
         name: "twitch",
@@ -43,33 +39,45 @@ module.exports = {
     ]
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    // Add support for *.mdx files in gatsby
+
+    "gatsby-plugin-mdx",
+
+    // Add a collection called "posts" that looks
+    // for files in content/posts/
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
+        name: "posts",
+        path: `${__dirname}/content/posts/`
+      }
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: `${__dirname}/content/images`
+      }
+    },
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-react-svg`,
       options: {
-        rule:
-          {
-            include: /\.inline\.svg$/
-          }
+        rule: {
+          include: /\.inline\.svg$/
+        }
       }
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: trackingId,
-      },
+        trackingId: trackingId
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
-      options : {
-        name: 'footer',
+      options: {
+        name: "footer",
         path: `${__dirname}/src/images/assets/footer`
       }
     },
@@ -92,11 +100,11 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      },
-    },
+        icon: `src/images/favicon.png` // This path is relative to the root of the site.
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
-  ],
-}
+  ]
+};

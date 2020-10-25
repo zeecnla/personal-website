@@ -11,49 +11,17 @@ const AboutDiv = styled.div`
 `;
 
 
-const About = ({ data }) => {
-
-  const { name, description, socialLinks, aboutMe, profile } = data.allContentfulAbout.edges[0].node;
-  const { rawMarkdownBody } = aboutMe.childMarkdownRemark;
-
-  return (
+const About = () => (
     <AboutDiv id="about">
       <h2>About</h2>
-      <p style={{lineHeight: '30px', 'paddingTop': '2em'}}>{rawMarkdownBody}</p>
+      <p style={{lineHeight: '30px', 'paddingTop': '2em'}}>
+        I am a Software Developer. I enjoy learning and building
+        pretty much anything. Web Apps, Websites, Legos. I am proficient
+        in Java,C#,HTML,CSS,Javascript. I am currently diving into
+        React and GatsbyJS. When I am not working/coding, I am doing photography,
+        hiking, and playing basketball.
+      </p>
     </AboutDiv>
   )
-}
 
-export default props=> (
- <StaticQuery
-    query={graphql`
-      query aboutQuery {
-        allContentfulAbout {
-          edges {
-            node{
-              name
-              description
-              socialLinks {
-                name
-                fontAwesomeIcon
-                url
-              }
-              profile {
-                fluid(maxWidth:200, quality:100){
-                  ...GatsbyContentfulFluid
-                }
-              }
-              aboutMe {
-                childMarkdownRemark {
-                  rawMarkdownBody
-                }
-              }
-            }
-          }
-        }
-      }
-    `}
-  render = { data => <About data={data} {...props}/> }
-  />
-)
-
+  export default About

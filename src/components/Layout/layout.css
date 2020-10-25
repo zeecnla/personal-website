@@ -84,12 +84,30 @@ nav ul li {
   border-bottom: 1px solid transparent;
 }
 nav ul li :hover {
-  border-bottom-color: black;
+  border-bottom-color: color(--dianne);
 }
-nav a {
+nav p {
   border-bottom: 1px solid transparent;
 }
-nav a:hover {
-  border-bottom: 1px solid black;
+nav p:hover {
+  border-bottom: 1px solid color(--dianne);
+  cursor: pointer;
+}
+#blog:hover {
+  border-bottom: 1px solid color(--dianne);
+}
+.gallery {
+  height:100%;
+  width:100%;
+  display:grid;
+  row-gap:10px;
+}
+.image {
+  width: calc(100% / 3);
+}
+@media screen and (max-width: 320px){
+  .gallery {
+    background: red;
+  }
 }
 

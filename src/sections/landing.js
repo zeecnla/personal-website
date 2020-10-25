@@ -1,13 +1,13 @@
-import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
-import styled, { keyframes } from 'styled-components';
-import Background from '../images/background.inline.svg'
+import React from "react"
+import { StaticQuery, graphql } from "gatsby"
+import styled, { keyframes } from "styled-components"
+import Background from "../images/background.inline.svg"
 const LandingPage = styled.div`
-    height:75vh;
-    display:grid;
-    align-items:center;
-    position:relative;
-`;
+  height: 75vh;
+  display: grid;
+  align-items: center;
+  position: relative;
+`
 const fadeout = keyframes`
   0% {
     opacity:1;
@@ -28,72 +28,81 @@ const fadeout = keyframes`
   }
 `
 const Cta = styled.a`
-    display: block;
-    justify-content:center;
-    align-items:center;
-    color: white;
-    border: 3px solid black;
-    width: 2.5em;
-    height: 4.5em;
-    border-radius: 40px;
-    cursor: pointer;
-    margin: -15px auto auto auto;
-`;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border: 3px solid black;
+  width: 2.5em;
+  height: 4.5em;
+  border-radius: 40px;
+  cursor: pointer;
+  margin: -15px auto auto auto;
+`
 
 const AnimatedBlock = styled.div`
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  background: black;
+  border-radius: 100%;
+  margin: 7px;
+  width: 20px;
+  height: 20px;
+  animation: ${fadeout} 1.5s linear infinite;
+  -webkit-animation: ${fadeout} 1.5s linear infinite; /* Safari 4+ */
+  -moz-animation: ${fadeout} 1.5s linear infinite; /* Fx 5+ */
+  -o-animation: ${fadeout} 1.5s linear infinite; /* Opera 12+ */
+  -ms-animation: ${fadeout} 1.5s linear infinite; /* Opera 12+ */
+`
 
-    display:block;
-    cursor:pointer;
-    position:absolute;
-    background:black;
-    border-radius: 100%;
-    margin: 7px;
-    width: 20px;
-    height:20px;
-    animation: ${fadeout} 1.5s linear infinite;
-    -webkit-animation: ${fadeout} 1.5s linear infinite; /* Safari 4+ */
-    -moz-animation:    ${fadeout} 1.5s linear infinite; /* Fx 5+ */
-    -o-animation:      ${fadeout} 1.5s linear infinite; /* Opera 12+ */
-    -ms-animation:      ${fadeout} 1.5s linear infinite; /* Opera 12+ */
-`;
+const Landing = ({ data }) => {
+  return (
+    <>
+      <LandingPage>
+        <h1
+          style={{
+            width: "220px",
+            wordBreak: `break-all`,
+            fontSize: `2.5em`,
+            lineHeight: `1.5em`,
+            margin: 0,
+            zIndex: "10",
+            position: "absolute",
+          }}
+        >
+          Hello{" "}
+          <span role="img" aria-label="Hand waiving">
+            👋
+          </span>
+          ,<br /> I'm Cesar!
+        </h1>
+        <Background
+          style={{
+            width: `100%`,
+            height: "100%",
+          }}
+        />
+      </LandingPage>
 
-const Landing = ({data}) => {
-    return (
-        <>
-            <LandingPage>
-                    <h1 style={{
-                        width: '220px',
-                        wordBreak: `break-all`,
-                        fontSize: `2.5em`,
-                        lineHeight: `1.5em`,
-                        margin: 0,
-                        zIndex: '10',
-                        position: 'absolute'
-
-                    }}>Hello 👋,<br/> I'm Cesar!</h1>
-                    <Background style={{
-                      width:`100%`,
-                      height:'100%'
-                    }}/>
-                </LandingPage>
-
-            <Cta href="#about"><AnimatedBlock/></Cta>
-
-        </>
-    )
+      <Cta href="#about">
+        <AnimatedBlock />
+      </Cta>
+    </>
+  )
 }
 
-export default props => (
-    <StaticQuery
-        query={graphql`
-        query landingQuery {
-            site {
-                siteMetadata{
-                    greeting
-                }
-            }
+export default (props) => (
+  <StaticQuery
+    query={graphql`
+      query landingQuery {
+        site {
+          siteMetadata {
+            greeting
+          }
         }
-        `}
-        render={data => <Landing data={data} {...props} />}
-    />
+      }
+    `}
+    render={(data) => <Landing data={data} {...props} />}
+  />
 )
