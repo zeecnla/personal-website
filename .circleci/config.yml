@@ -19,7 +19,7 @@ jobs:
     steps:
       - checkout
 
-      - run: sudo npm install -g npm@latest
+      - run: sudo npm install -g --no-package-lock npm@latest
       - run: npm install
       - run: npm run build:ci
       - add_ssh_keys:

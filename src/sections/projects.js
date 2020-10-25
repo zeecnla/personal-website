@@ -58,7 +58,7 @@ const Item = ({ node }) => {
       {logo && (
         <a href={projectUrl == null ? "#" : projectUrl}>
           {" "}
-          <Img fluid={logo.fluid} />
+          <Img fluid={logo.fluid} alt={name} />
         </a>
       )}
       <div
