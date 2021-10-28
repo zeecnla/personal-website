@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmelchor_site=self.webpackChunkmelchor_site||[]).push([[793],{9923:function(e,t,l){l.r(t),l.d(t,{default:function(){return a}});var n=l(7294),r=l(365),c=l(7487),u=function(){return n.createElement("div",null,n.createElement("ul",null,n.createElement("li",null)))},a=function(){return n.createElement(r.Z,null,n.createElement(c.Z,{title:"Home",keywords:["cesar","melchor","react","software developer","CSULB"]}),n.createElement(u,null))}}}]);
+//# sourceMappingURL=component---src-pages-links-js-ca3e754bf6c3c7492842.js.map
