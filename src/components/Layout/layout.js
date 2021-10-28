@@ -8,9 +8,7 @@ import "./layout.css"
 import "font-awesome/css/font-awesome.min.css"
 import { device } from "../device"
 import "animate.css"
-import AOS from "aos"
-import "aos/dist/aos.css" // You can also use <link> for styles
-
+var AOS = require("aos")
 AOS.init()
 
 const Container = styled.div`
