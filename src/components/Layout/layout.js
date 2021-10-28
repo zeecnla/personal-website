@@ -9,7 +9,7 @@ import "font-awesome/css/font-awesome.min.css"
 import { device } from "../device"
 import "animate.css"
 
-if (typeof window !== `undefined`) {
+if (typeof document !== `undefined`) {
   var AOS = require("aos")
   AOS.init()
 }
