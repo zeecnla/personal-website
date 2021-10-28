@@ -3,51 +3,78 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import { device } from "../device"
 import { navigate } from "@reach/router"
+import { ThemeToggler } from "gatsby-plugin-dark-mode"
+
+import "./Navbar.css"
 
 const Navigation = styled.nav`
-  display: grid;
+  display: flex;
   width: 100%;
-  grid-template-columns: auto;
-  text-align: right;
-  padding: 20px 10px;
-
-  @media ${device.tablet} {
-    width: 80%;
-    margin: 0 auto;
-  }
-  @media ${device.laptopL} {
-    width: 60%;
-    marginn: auto;
-  }
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+  margin: auto;
 `
+const NavHeader = styled.header``
 
 const Navbar = ({ siteTitle }) => {
-  const handleOnClickAbout = () => {
-    navigate("/#about")
-  }
   const handleOnClickProjects = () => {
-    navigate("/#projects")
+    navigate("//#projects")
   }
   const handleOnClickContact = () => {
-    navigate("/#contact")
+    navigate("//#contact")
   }
   return (
     <Navigation>
-      <ul style={{ float: "right" }}>
-        <li>
-          <p onClick={handleOnClickAbout}>About</p>
-        </li>
-        {/* <li><Link
-                id="blog"
-                to="/blog/"
-                activeStyle={{ borderBottom:`1px solid color(--dianne)` }}>Blog</Link></li> */}
-        <li>
-          <p onClick={handleOnClickProjects}>Projects</p>
-        </li>
-        <li>
-          <p onClick={handleOnClickContact}>Contact</p>
-        </li>
-      </ul>
+      <div>
+        <Link to="/">
+          <span className="full-text">
+            <b>C</b>esar <b>M</b>elchor
+          </span>
+          <span className="short-text">
+            <b>CM</b>
+          </span>
+        </Link>
+      </div>
+      <div>
+        <ul>
+          <li
+            style={{
+              display: "inline-block",
+              padding: "0px 10px",
+              fontSize: "15px",
+            }}
+          >
+            <Link to="/#projects">Projects</Link>
+          </li>
+          <li
+            style={{
+              display: "inline-block",
+              padding: "0px 10px",
+              fontSize: "15px",
+            }}
+          >
+            <Link to="/photography">Photography</Link>
+          </li>
+          {/* <li>
+            <ThemeToggler>
+              {({ theme, toggleTheme }) => (
+                <label>
+                  <input
+                    id="darkmode"
+                    type="checkbox"
+                    onChange={(e) =>
+                      toggleTheme(e.target.checked ? "dark" : "light")
+                    }
+                    checked={theme === "dark"}
+                  />{" "}
+                  Dark mode
+                </label>
+              )}
+            </ThemeToggler>
+          </li> */}
+        </ul>
+      </div>
     </Navigation>
   )
 }

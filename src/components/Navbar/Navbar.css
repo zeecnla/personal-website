@@ -1,0 +1,24 @@
+
+
+
+
+.short-text {
+      display: none;
+}
+.full-text {
+font-size: 20px;
+}
+
+
+
+@media screen and (max-width: 600px) {
+      .short-text {
+            display: inline-block;
+            font-weight:900;
+            font-size: 24px;
+      }
+
+      .full-text {
+            display: none;
+      }
+}

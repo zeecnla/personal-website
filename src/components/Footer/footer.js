@@ -1,18 +1,16 @@
-import React from "react";
-import "./footer.css";
+import React from "react"
+import "./footer.css"
 
-import { StaticQuery, graphql } from "gatsby";
-import styled from "styled-components";
-import { device } from "../device";
+import { StaticQuery, graphql } from "gatsby"
+import styled from "styled-components"
+import { device } from "../device"
 
 const FooterDiv = styled.footer`
-  background: #af8282;
   padding: 20px;
-  color: white;
   position: absolute;
   bottom: 0;
   width: 100%;
-`;
+`
 const FooterContent = styled.div`
   width: 100%;
 
@@ -24,9 +22,9 @@ const FooterContent = styled.div`
     width: 60%;
     marginn: auto;
   }
-`;
+`
 const FooterListElements = ({ data }) => {
-  const { name, url } = data;
+  const { name, url } = data
   return (
     <li>
       <a href={url} id={name}>
@@ -34,34 +32,39 @@ const FooterListElements = ({ data }) => {
         <i className={`fa fa-${name} fa-2x`}></i>
       </a>
     </li>
-  );
-};
+  )
+}
 
 const Footer = ({ data }) => (
   <FooterDiv id="contact">
     <FooterContent>
-      <h2>Let's Work Together</h2>
-      <p>
-        If you want to chat about a project you want help with or need any
-        advice, just drop me a message. I’m AVAILABLE for any projects you want
-        to work on.
-      </p>
-      <p>
-        <a className="link" href="mailto:hello@cesarmelchor.me">
-          Email Me
-        </a>
-      </p>
-
-      <div className="social">
+      <div
+        className="social"
+        style={{
+          display: `flex`,
+          alignItems: `center`,
+          padding: ` 20px 0px`,
+        }}
+      >
         <ul>
           {data.site.siteMetadata.social.map((data, index) => (
             <FooterListElements data={data} key={index} />
           ))}
         </ul>
       </div>
+      <div>
+        <span
+          style={{
+            marginTop: "40px",
+            textAlign: "center",
+          }}
+        >
+          Copyright © 2021 Cesar Melchor. All rights reserved.
+        </span>
+      </div>
     </FooterContent>
   </FooterDiv>
-);
+)
 export default (props) => (
   <StaticQuery
     query={graphql`
@@ -78,4 +81,4 @@ export default (props) => (
     `}
     render={(data) => <Footer data={data} {...props} />}
   />
-);
+)

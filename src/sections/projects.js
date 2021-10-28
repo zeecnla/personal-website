@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import Img from "gatsby-image"
+
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { graphql, StaticQuery } from "gatsby"
 import { device } from "../components/device"
 
@@ -24,7 +25,7 @@ const ProjectContainer = styled.div`
 `
 const ProjectCard = styled.div`
   width: 100%;
-  background: rgb(6, 161, 196, 0.15);
+  background: #a8dadc;
   display: grid;
   grid-gap: 1em;
   grid-template-columns: 1fr;
@@ -53,12 +54,14 @@ const Projects = ({ data }) => (
 const Item = ({ node }) => {
   console.log(node)
   const { name, description, projectUrl, repositoryUrl, logo } = node
+  const image = getImage(logo)
+  console.log(logo)
   return (
-    <ProjectCard>
+    <ProjectCard data-aos="fade-up" data-aos-duration="3000">
       {logo && (
         <a href={projectUrl == null ? "#" : projectUrl}>
           {" "}
-          <Img fluid={logo.fluid} alt={name} />
+          <GatsbyImage image={image} alt={name} />
         </a>
       )}
       <div
@@ -87,18 +90,17 @@ export default (props) => (
   <StaticQuery
     query={graphql`
       query projectQuery {
-        allContentfulProject(limit: 100) {
+        allContentfulProject {
           edges {
             node {
               name
-              repositoryUrl
+              id
               description
               projectUrl
+              repositoryUrl
               slug
               logo {
-                fluid(quality: 100) {
-                  ...GatsbyContentfulFluid_withWebp
-                }
+                gatsbyImageData(placeholder: BLURRED)
               }
             }
           }

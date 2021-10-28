@@ -1,27 +1,32 @@
 var spaceId
 var accessToken
+var trackingId
 
 const environment = process.env.NODE_ENV
 
+console.log(environment)
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
 if (environment !== "production") {
+  console.log("in dev")
+  spaceId = process.env.APP_SPACE_ID
+  accessToken = process.env.PREVIEW_ACCESS_TOKEN
+  trackingId = process.env.APP_TRACKING_ID
+} else {
+  console.log("in production")
   spaceId = process.env.APP_SPACE_ID
   accessToken = process.env.APP_ACCESS_TOKEN
   trackingId = process.env.APP_TRACKING_ID
-} else {
-  spaceId = process.env.GATSBY_SPACE_ID
-  accessToken = process.env.GATSBY_ACCESS_TOKEN
-  trackingId = process.env.GATSBY_TRACKING_ID
 }
 
 module.exports = {
   siteMetadata: {
     title: `Cesar Melchor`,
     greeting: `Hello 👋, I'm Cesar!`,
-    description: `This is my portfolio site.`,
+    url: `https://cesarmelchor.me`,
+    description: `This is my portfolio site for projects and everything else!`,
     author: `@zeecnla`,
     social: [
       {
@@ -41,24 +46,25 @@ module.exports = {
   plugins: [
     // Add support for *.mdx files in gatsby
 
-    "gatsby-plugin-mdx",
-
-    // Add a collection called "posts" that looks
-    // for files in content/posts/
-    // {
-    //   resolve: "gatsby-source-filesystem",
-    //   options: {
-    //     name: "posts",
-    //     path: `${__dirname}/content/posts/`
-    //   }
-    // },
-    // {
-    //   resolve: "gatsby-source-filesystem",
-    //   options: {
-    //     name: "images",
-    //     path: `${__dirname}/content/images`
-    //   }
-    // },
+    `gatsby-plugin-image`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`auto`, `webp`],
+          placeholder: `dominantColor`,
+          quality: 50,
+          breakpoints: [750, 1080, 1366, 1920],
+          backgroundColor: `transparent`,
+          tracedSVGOptions: {},
+          blurredOptions: {},
+          jpgOptions: {},
+          pngOptions: {},
+          webpOptions: {},
+          avifOptions: {},
+        },
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-react-svg`,
@@ -68,6 +74,19 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-source-cloudinary`,
+      options: {
+        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+        apiKey: process.env.CLOUDINARY_API_KEY,
+        apiSecret: process.env.CLOUDINARY_API_SECRET,
+        resourceType: `image`,
+        prefix: `images/`,
+        tags: true,
+        maxResults: 200,
+      },
+    },
+    "gatsby-plugin-dark-mode",
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -88,9 +107,6 @@ module.exports = {
         accessToken: accessToken,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-transformer-remark`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
