@@ -30,4 +30,3 @@ jobs:
       - run: git config --global user.name "zeecnla"
       - run: npm run deploy:ci
       # run tests!
-      - run: npm test
