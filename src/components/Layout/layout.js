@@ -8,8 +8,11 @@ import "./layout.css"
 import "font-awesome/css/font-awesome.min.css"
 import { device } from "../device"
 import "animate.css"
-var AOS = require("aos")
-AOS.init()
+
+if (typeof window !== `undefined`) {
+  var AOS = require("aos")
+  AOS.init()
+}
 
 const Container = styled.div`
   padding: 0 20px 0px 20px;

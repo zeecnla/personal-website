@@ -4,18 +4,15 @@ var trackingId
 
 const environment = process.env.NODE_ENV
 
-console.log(environment)
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
 if (environment !== "production") {
-  console.log("in dev")
   spaceId = process.env.APP_SPACE_ID
-  accessToken = process.env.PREVIEW_ACCESS_TOKEN
+  accessToken = process.env.APP_ACCESS_TOKEN
   trackingId = process.env.APP_TRACKING_ID
 } else {
-  console.log("in production")
   spaceId = process.env.APP_SPACE_ID
   accessToken = process.env.APP_ACCESS_TOKEN
   trackingId = process.env.APP_TRACKING_ID

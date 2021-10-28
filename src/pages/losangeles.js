@@ -19,7 +19,6 @@ const LAGallery = () => {
   `)
 
   const images = data.allCloudinaryMedia.edges
-  console.log(images)
 
   return (
     <div>

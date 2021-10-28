@@ -19,7 +19,6 @@ const SFGallery = () => {
   `)
 
   const images = data.allCloudinaryMedia.edges
-  console.log(images)
 
   return (
     <div>
