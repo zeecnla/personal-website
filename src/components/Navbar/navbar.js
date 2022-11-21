@@ -14,6 +14,7 @@ const Navigation = styled.nav`
   align-items: center;
   padding: 10px 10px;
   margin: auto;
+  color: #5c6274;
 `
 const NavHeader = styled.header``
 
@@ -56,23 +57,6 @@ const Navbar = ({ siteTitle }) => {
           >
             <Link to="/photography">Photography</Link>
           </li>
-          {/* <li>
-            <ThemeToggler>
-              {({ theme, toggleTheme }) => (
-                <label>
-                  <input
-                    id="darkmode"
-                    type="checkbox"
-                    onChange={(e) =>
-                      toggleTheme(e.target.checked ? "dark" : "light")
-                    }
-                    checked={theme === "dark"}
-                  />{" "}
-                  Dark mode
-                </label>
-              )}
-            </ThemeToggler>
-          </li> */}
         </ul>
       </div>
     </Navigation>

@@ -9,18 +9,27 @@ import { navigate } from "gatsby"
 const Gallery = () => {
   return (
     <div className="image-grid ">
-      <div className="image-item " data-aos="fade-up" data-aos-duration="3000">
+      <div
+        className="image-item "
+        data-aos="fade-up"
+        data-aos-duration="3000"
+        onClick={() => navigate("/yosemite")}
+      >
         <StaticImage
           placeholder="blurred"
           layout="fullWidth"
           src="../albums/yosemite.jpg"
           alt="Glaicer Point over view"
           quality="90"
-          onClick={() => navigate("/yosemite")}
         />
         <h3>Yosemite</h3>
       </div>
-      <div className="image-item " data-aos="fade-up" data-aos-duration="3000">
+      <div
+        className="image-item "
+        data-aos="fade-up"
+        data-aos-duration="3000"
+        onClick={() => navigate("/sf")}
+      >
         <StaticImage
           placeholder="blurred"
           layout="fullWidth"
@@ -28,41 +37,52 @@ const Gallery = () => {
           alt="San Francisco Chinatown"
           objectPosition="low"
           quality="90"
-          onClick={() => navigate("/sf")}
         />
         <h3>SF / Chinatown</h3>
       </div>
-      <div className="image-item " data-aos="fade-up" data-aos-duration="3000">
+      <div
+        className="image-item "
+        data-aos="fade-up"
+        data-aos-duration="3000"
+        onClick={() => navigate("/losangeles")}
+      >
         <StaticImage
           placeholder="blurred"
           layout="fullWidth"
           src="../albums/losangeles.jpg"
           alt="Los angeles"
           quality="90"
-          onClick={() => navigate("/losangeles")}
         />
         <h3>Los Angeles</h3>
       </div>
-      <div className="image-item " data-aos="fade-up" data-aos-duration="3000">
+      <div
+        className="image-item "
+        data-aos="fade-up"
+        data-aos-duration="3000"
+        onClick={() => navigate("/joshuatree")}
+      >
         <StaticImage
           placeholder="blurred"
           layout="fullWidth"
           src="../albums/joshuatree.jpg"
           alt="joshua tree"
           quality="90"
-          onClick={() => navigate("/joshuatree")}
         />
         <h3>Joshua Tree</h3>
       </div>
 
-      <div className="image-item " data-aos="fade-up" data-aos-duration="3000">
+      <div
+        className="image-item "
+        data-aos="fade-up"
+        data-aos-duration="3000"
+        onClick={() => navigate("/portraits")}
+      >
         <StaticImage
           placeholder="blurred"
           layout="fullWidth"
           src="../albums/portraits.jpg"
           alt="A park ranger"
           quality="90"
-          onClick={() => navigate("/portraits")}
         />
         <h3>Portraits</h3>
       </div>
@@ -110,6 +130,7 @@ const Photography = ({ data }) => {
             gridArea: "description",
             marginBottom: "40px",
             lineHeight: `2.5`,
+            fontSize: "2em",
           }}
           className="animated fadeInUp delay-2s"
         >
@@ -127,9 +148,7 @@ const Photography = ({ data }) => {
             justifyContent: "center",
             marginBottom: "40px",
           }}
-        >
-          Albums
-        </h3>
+        ></h3>
         <Gallery className="animated fadeInUp delay-2s" />
       </div>
     </Layout>

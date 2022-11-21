@@ -25,7 +25,7 @@ const ProjectContainer = styled.div`
 `
 const ProjectCard = styled.div`
   width: 100%;
-  background: #a8dadc;
+  background: #5c6274;
   display: grid;
   grid-gap: 1em;
   grid-template-columns: 1fr;
@@ -33,6 +33,7 @@ const ProjectCard = styled.div`
   justify-content: center;
   margin: 0px 0px 2em 0px;
   border-radius: 20px;
+  color: white;
 `
 
 const Projects = ({ data }) => (
@@ -52,10 +53,8 @@ const Projects = ({ data }) => (
   </div>
 )
 const Item = ({ node }) => {
-  console.log(node)
   const { name, description, projectUrl, repositoryUrl, logo } = node
   const image = getImage(logo)
-  console.log(logo)
   return (
     <ProjectCard data-aos="fade-up" data-aos-duration="3000">
       {logo && (

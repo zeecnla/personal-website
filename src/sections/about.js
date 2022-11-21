@@ -1,31 +1,55 @@
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
-import styled, { keyframes } from "styled-components"
+import { useStaticQuery, graphql } from "gatsby"
+import { renderRichText } from "gatsby-source-contentful/rich-text"
+import { INLINES, BLOCKS, MARKS } from "@contentful/rich-text-types"
 
-const AboutDiv = styled.div`
-  width: 100%;
-  padding: 40px 0px;
-  z-index: -1;
-  line-height: 2em;
-`
+const options = {
+  renderMark: {
+    [MARKS.BOLD]: (text) => <b className="font-bold">{text}</b>,
+  },
+  renderNode: {
+    [INLINES.HYPERLINK]: (node, children) => {
+      const { uri } = node.data
+      return (
+        <a href={uri} className="underline">
+          {children}
+        </a>
+      )
+    },
+    [BLOCKS.HEADING_2]: (node, children) => {
+      return <h2>{children}</h2>
+    },
+    ["paragraph"]: (node, next) =>
+      `<p>${next(node.content).replace(/\n/g, `</br>`)}</p>`,
+  },
+}
 
-const About = () => (
-  <AboutDiv id="about">
-    <h2>About Me</h2>
-    <p style={{ lineHeight: "30px", paddingTop: "2em" }}>
-      I am a Software Developer. I enjoy learning and building pretty much
-      anything. Web Apps, Websites, Legos. I am proficient in
-      Java,C#,HTML,CSS,Javascript. I am currently diving into React and
-      GatsbyJS. When I am not working/coding, I am doing photography, hiking,
-      and playing basketball.
-    </p>
-    <br />
-    <p style={{ lineHeight: "30px", paddingTop: "2em" }}>
-      I am open to work. You can see me resume or some of the projects I have
-      worked on.
-    </p>
-  </AboutDiv>
-)
+export default function About() {
+  const data = useStaticQuery(graphql`
+    query AboutQuery {
+      allContentfulAbout {
+        edges {
+          node {
+            name
+            description
+            aboutMe {
+              raw
+            }
+          }
+        }
+      }
+    }
+  `)
 
-export default About
+  // I will only ever have 1 about section so hard-coding is fine
+  const { description, aboutMe } = data.allContentfulAbout.edges[0].node
+
+  return (
+    <div className="about-container">
+      <div className="flex">
+        <h1 className="large-text m-0 pb-1">{description}</h1>
+      </div>
+      <div>{renderRichText(aboutMe)}</div>
+    </div>
+  )
+}

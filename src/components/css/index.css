@@ -1,8 +1,6 @@
-/* /* *MArgin top from the navigation will always
-    be 50px
-**/
+
 :root {
-	--primary-color: black;
+	--primary-color: #5c6274;
 	--twitch: #6441a5;
 	--twitter: #38A1F3;
 	--github: #000;
@@ -22,69 +20,43 @@
 
 #globe :hover {
 	color: rgb(175, 130, 130);
-
 }
 
+/** Common CSS **/
 
+.large-text {
+	font-size: 2.5em;
+	line-height: 1.5em;
+}
+.m-0 {
+	margin:0;
+}
+.pt-1 {
+	padding-top: 1em;
+}
+.pb-1 {
+	padding-bottom: 1em;
+}
 
-/*
-.home {
-    height:250px;
-    display: flex;
-    justify-content: center;
-	align-items: center;
+.flex {
+	display: flex;
+}
+
+/* About Section CSS */
+.about-container {
 	width:100%;
-	overflow: hidden;
-}
-.home h2 {
-    padding-top:10vh;
-    font-size: 24px;
-    margin:0;
-    line-height: 1em;
-    font-style: bold;
-}
-.home p {
-    white-space: pre-wrap;
-    font-size: 24px;
-    font-style: bold;
-}
-.cta {
-    display: block;
-    color: black;
-    background: white;
-    text-decoration: none;
-    padding: 8px 50px;
-    font-size: 1.2em;
-    text-align: center;
-    font-weight: bold;
-    border-radius: 4px;
-    margin: 2em 0;
-    cursor: pointer;
-}
-.project-container {
-	text-align: center;
-	display: grid;
-	grid-template-columns: 300px;
-	grid-column-gap: 15px;
-	grid-row-gap:15px;
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	justify-content: center;
-
-}
-.project-card {
-	display: inline-block;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-	background: #fff;
-	margin: 0px 0px 20px 0px;
-	height: 300px;
-	text-align: center;
-	padding: 10px;
-	border-top-right-radius: 25px;
-	width: 90%;
-	max-width:500px;
-	border-bottom-left-radius: 25px;
+	padding:40px 0px;
+	line-height:2em;
 }
 
- */
+.about-container p {
+  white-space: pre-wrap;
+}
+
+
+
+.about-header {
+
+}
+
+/* Projects Section CSS */
