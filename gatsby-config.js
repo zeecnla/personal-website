@@ -31,10 +31,6 @@ module.exports = {
         url: "https://twitter.com/zeecnla",
       },
       {
-        name: "twitch",
-        url: "https://www.twitch.tv/zeecnla",
-      },
-      {
         name: "github",
         url: "https://www.github.com/zeecnla",
       },

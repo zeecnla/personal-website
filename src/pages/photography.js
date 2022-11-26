@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/Layout/layout"
 import SEO from "../components/seo"
-import "../components/css/photography.css"
+import "../components/css/index.css"
 import { StaticImage } from "gatsby-plugin-image"
 import { navigate } from "gatsby"
 
@@ -101,54 +101,18 @@ const Photography = ({ data }) => {
           `film`,
           "photography",
           "filmphotography",
+          "streetphotography",
+          "cesar melchor photography",
         ]}
       />
-      <div
-      // style={{
-      //   display: "grid",
-      //   gridTemplateAreas: `
-      //     "title title title"
-      //     "description description description"
-      //     "albums albums albums"
-      //     "thumbnails thumbnails thumbnails"
-      //     `,
-      // }}
-      >
-        <h1
-          style={{
-            gridArea: "title",
-            height: "20vh",
-            display: "flex",
-            alignItems: "center",
-            textAlign: "center",
-          }}
-        >
-          Photography
-        </h1>
-        <p
-          style={{
-            gridArea: "description",
-            marginBottom: "40px",
-            lineHeight: `2.5`,
-            fontSize: "2em",
-          }}
-          className="animated fadeInUp delay-2s"
-        >
+      <div>
+        <h1 className="center pb-1 ">Photography</h1>
+        <p className="center animated fadeInUp delay-2s">
           I started photography in 2018. I started with a digital camera, but
           fell in love with shooting film. I like shooting a variety of things.
           Street,portraits,landscapes,etc.
         </p>
 
-        <h3
-          style={{
-            display: "flex",
-            gridArea: "albums",
-            alignItems: "center",
-            textAlign: "center",
-            justifyContent: "center",
-            marginBottom: "40px",
-          }}
-        ></h3>
         <Gallery className="animated fadeInUp delay-2s" />
       </div>
     </Layout>
