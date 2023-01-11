@@ -29,7 +29,7 @@
     "gatsby-source-contentful": "^8.0.0",
     "gatsby-source-filesystem": "^4.0.0",
     "gatsby-transformer-cloudinary": "^3.0.0",
-    "gatsby-transformer-remark": "^6.0.0",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^4.0.0",
     "js-yaml": "^4.1.0",
     "prop-types": "^15.7.2",
