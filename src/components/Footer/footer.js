@@ -29,7 +29,7 @@ const FooterListElements = ({ data }) => {
     <li>
       <a href={url} id={name}>
         {" "}
-        <i className={`fa fa-${name} fa-2x`}></i>
+        <i className={`fa fa-brands fa-${name} fa-2x`}></i>
       </a>
     </li>
   )
@@ -59,7 +59,8 @@ const Footer = ({ data }) => (
             textAlign: "center",
           }}
         >
-          Copyright © 2021 Cesar Melchor. All rights reserved.
+          Copyright © {new Date().getFullYear()} Cesar Melchor. All rights
+          reserved.
         </span>
       </div>
     </FooterContent>

@@ -34,6 +34,14 @@ module.exports = {
         name: "github",
         url: "https://www.github.com/zeecnla",
       },
+      {
+        name: "youtube-play",
+        url: "https://www.youtube.com/@zeecnla",
+      },
+      {
+        name: "twitch",
+        url: "https://www.twitch.tv/zeecnla",
+      },
     ],
   },
   plugins: [
@@ -67,19 +75,6 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: `gatsby-source-cloudinary`,
-      options: {
-        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
-        apiKey: process.env.CLOUDINARY_API_KEY,
-        apiSecret: process.env.CLOUDINARY_API_SECRET,
-        resourceType: `image`,
-        prefix: `images/`,
-        tags: true,
-        maxResults: 200,
-      },
-    },
-    "gatsby-plugin-dark-mode",
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

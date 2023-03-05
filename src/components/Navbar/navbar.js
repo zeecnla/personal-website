@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import { device } from "../device"
 import { navigate } from "@reach/router"
-import { ThemeToggler } from "gatsby-plugin-dark-mode"
 
 import "./Navbar.css"
 
@@ -47,15 +46,6 @@ const Navbar = ({ siteTitle }) => {
             }}
           >
             <Link to="/#projects">Projects</Link>
-          </li>
-          <li
-            style={{
-              display: "inline-block",
-              padding: "0px 10px",
-              fontSize: "15px",
-            }}
-          >
-            <Link to="/photography">Photography</Link>
           </li>
         </ul>
       </div>
