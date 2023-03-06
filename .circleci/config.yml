@@ -2,64 +2,31 @@
 # #
 # # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 # #
-# version: 2
-# jobs:
-#   build:
-#     docker:
-#       # specify the version you desire here
-#       - image: circleci/node:19.6.1
-
-#       # Specify service dependencies here if necessary
-#       # CircleCI maintains a library of pre-built images
-#       # documented at https://circleci.com/docs/2.0/circleci-images/
-#       # - image: circleci/mongo:3.4.4
-
-#     working_directory: ~/repo
-
-#     steps:
-#       - checkout
-
-#       - run: sudo npm install -g --no-package-lock npm@latest
-#       - run: npm install
-#       - run: npm run build:ci
-#       - add_ssh_keys:
-#           fingerprints:
-#             - ${SSH_KEY}
-
-#       - run: git config --global user.email "csrmelchor@gmail.com"
-#       - run: git config --global user.name "zeecnla"
-#       - run: npm run deploy:ci
-#       # run tests!
-
----
-version: 2.1
+version: 2
 jobs:
-  setup:
+  build:
     docker:
+      # specify the version you desire here
       - image: circleci/node:18.0.0
+
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/mongo:3.4.4
+
     working_directory: ~/repo
+
     steps:
       - checkout
-      - run:
-          name: Update npm
-          command: "sudo npm install -g npm@latest"
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-      - run:
-          name: Install npm
-          command: npm install
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - node_modules
-      - run:
-          name: Build
-          command: npm run build:ci
-      - run:
-          name: Add Keys
-          add_ssh_keys:
-            fingerprints:
-              - ${SSH_KEY}
+
+      - run: sudo npm install -g --no-package-lock npm@latest
+      - run: npm install
+      - run: npm run build:ci
+      - add_ssh_keys:
+          fingerprints:
+            - ${SSH_KEY}
+
       - run: git config --global user.email "csrmelchor@gmail.com"
       - run: git config --global user.name "zeecnla"
       - run: npm run deploy:ci
+#       # run tests!
