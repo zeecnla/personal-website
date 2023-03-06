@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmelchor_site=self.webpackChunkmelchor_site||[]).push([[883],{429:function(e,t,l){l.r(t);var a=l(7294),n=l(134),o=l(1883);t.default=()=>a.createElement(n.Z,null,a.createElement("div",{class:"page"},a.createElement("h2",null,"Sorry 404"),a.createElement("div",{className:"info"},a.createElement("p",null,"I will take you to back to the home page, you may find something interesting..."),a.createElement(o.Link,{to:"/",class:"gohome"},"Go to Home"))))}}]);
+//# sourceMappingURL=component---src-pages-404-js-312218903f264810a53e.js.map

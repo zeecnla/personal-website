@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmelchor_site=self.webpackChunkmelchor_site||[]).push([[793],{1601:function(e,l,t){t.r(l),t.d(l,{default:function(){return c}});var n=t(7294),r=t(134);var u=()=>n.createElement("div",null,n.createElement("ul",null,n.createElement("li",null)));var c=()=>n.createElement(r.Z,null,n.createElement(u,null))}}]);
+//# sourceMappingURL=component---src-pages-links-js-7fe6f7fab8a6bf4b3339.js.map
