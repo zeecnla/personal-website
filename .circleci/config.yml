@@ -20,7 +20,6 @@ jobs:
       - checkout
 
       - run: sudo npm install -g --no-package-lock npm@latest
-      - run: yarn install
       - run: npm run build:ci
       - add_ssh_keys:
           fingerprints:
