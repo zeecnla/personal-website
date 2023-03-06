@@ -21,7 +21,7 @@ jobs:
 
       - run: sudo npm install -g --no-package-lock npm@latest
       - run: yarn install
-      - run: yarn run build:ci
+      - run: npm run build:ci
       - add_ssh_keys:
           fingerprints:
             - ${SSH_KEY}
