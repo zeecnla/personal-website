@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import Navbar from "../Navbar/navbar"
 import Footer from "../Footer/footer"
@@ -44,27 +44,24 @@ const Layout = ({ children }) => {
       AOS.refresh()
     }
   })
-  return (
-    <StaticQuery
-      query={graphql`
-        query SiteTitleQuery {
-          site {
-            siteMetadata {
-              title
-            }
-          }
+
+  const data = useStaticQuery(graphql`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          title
         }
-      `}
-      render={(data) => (
-        <div style={{ minHeight: "100vh", position: `relative` }}>
-          <Navbar />
-          <Container>
-            <main>{children}</main>
-          </Container>
-          <Footer />
-        </div>
-      )}
-    />
+      }
+    }
+  `)
+  return (
+    <div style={{ minHeight: "100vh", position: `relative` }}>
+      <Navbar />
+      <Container>
+        <main>{children}</main>
+      </Container>
+      <Footer />
+    </div>
   )
 }
 

@@ -1,7 +1,7 @@
 import React from "react"
 import "./footer.css"
 
-import { StaticQuery, graphql } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 import { device } from "../device"
 
@@ -25,6 +25,7 @@ const FooterContent = styled.div`
 `
 const FooterListElements = ({ data }) => {
   const { name, url } = data
+
   return (
     <li>
       <a href={url} id={name}>
@@ -66,20 +67,18 @@ const Footer = ({ data }) => (
     </FooterContent>
   </FooterDiv>
 )
-export default (props) => (
-  <StaticQuery
-    query={graphql`
-      query footerQuery {
-        site {
-          siteMetadata {
-            social {
-              name
-              url
-            }
+export default (props) => {
+  const data = useStaticQuery(graphql`
+    query footerQuery {
+      site {
+        siteMetadata {
+          social {
+            name
+            url
           }
         }
       }
-    `}
-    render={(data) => <Footer data={data} {...props} />}
-  />
-)
+    }
+  `)
+  return <Footer data={data} {...props} />
+}
